@@ -1,0 +1,13 @@
+Information Retrieval (IR) is a fundamental area of computer science that focuses on finding relevant information from large collections of data. An IR system helps users search for documents or text data that match their information needs. Modern IR systems are widely used in search engines, digital libraries, and recommendation systems.
+
+In this project, a simple IR system is implemented using Python. The system demonstrates the key components of IR, including document preprocessing, indexing, query processing, and ranking.
+
+Document preprocessing involves tokenizing the text to split it into individual terms, which are then used to build the index. The indexing component calculates term frequency (TF) for each term in each document and document frequency (DF) across all documents.
+
+The system uses the TF-IDF (Term Frequency-Inverse Document Frequency) model to compute the importance of each term. TF measures how often a term appears in a document, while IDF measures how rare or common a term is across the entire document collection. Combining TF and IDF allows the system to emphasize informative terms and reduce the weight of common words.
+
+Search queries are processed by creating a weighted vector representation similar to documents. The scoring model then calculates a relevance score between the query and each document using the TF-IDF weights.
+
+Ranking is an essential part of the system. Documents are sorted based on their relevance scores so that the most relevant results appear at the top of the search results list. Although the system currently supports only simple queries without Boolean operators, its modular design allows easy extensions, such as supporting Boolean queries or more advanced retrieval models like BM25.
+
+This project demonstrates the basic workflow of an IR system and provides a foundation for future enhancements, including improved ranking algorithms, larger datasets, and integration with machine learning techniques for better search accuracy.
