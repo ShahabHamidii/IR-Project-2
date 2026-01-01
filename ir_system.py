@@ -17,8 +17,8 @@ class Indexer:
     def __init__(self, documents):
         self.documents = documents
         self.num_docs = len(documents)
-        self.tf = []             # Term Frequency per document
-        self.df = defaultdict(int)  # Document Frequency per term
+        self.tf = []             
+        self.df = defaultdict(int)  
         self.build_index()
 
     def build_index(self):
@@ -118,25 +118,25 @@ class SearchEngine:
 # Main Execution
 # ========================
 def main():
-    # Load documents
+
     with open("documents.txt", encoding="utf-8") as f:
         documents = [line.strip() for line in f if line.strip()]
 
-    # Build index
+
     indexer = Indexer(documents)
 
-    # Initialize TF-IDF model and query processor
+
     scoring_model = TFIDFModel(indexer.df, indexer.num_docs)
     query_processor = QueryProcessor(indexer.df, indexer.num_docs)
 
-    # Initialize search engine
+
     engine = SearchEngine(indexer, scoring_model)
 
-    # Get user query
+
     query = input("Enter your query: ")
     query_vector = query_processor.process(query)
 
-    # Search and display results
+
     results = engine.search(query_vector)
 
     print("\nSearch Results:")
