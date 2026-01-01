@@ -43,20 +43,16 @@ Although the system currently supports only **simple queries without Boolean ope
 python ir_system.py
 Enter a query when prompted:
 
-yaml
-Copy code
+
 Enter your query: information retrieval
 View ranked results:
 
-yaml
-Copy code
 Search Results:
 Doc 2 | Score: 2.314
 Doc 5 | Score: 1.872
 Doc 1 | Score: 1.210
 Project Structure
-graphql
-Copy code
+
 IR-Project/
 │
 ├── ir_system.py       # Main Python implementation
